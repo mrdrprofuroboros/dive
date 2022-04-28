@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  dive-jupyter:
+    build:
+      context: .
+      network: host
+    restart: always
+    container_name: dive-jupyter
+    volumes:
+      - "./data:/home/jovyan/work"
+    ports:
+      - "127.0.0.1:8888:8888"
